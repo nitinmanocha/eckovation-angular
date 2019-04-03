@@ -1,0 +1,177 @@
+
+    
+    <header class="header">
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container"><a class="navbar-brand"><img src="../assets/img/logo.png" alt="Apple Store"></a>
+          <button type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">Menu<i class="fa fa-align-justify"></i></button>
+          <div id="navigation" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="active"><a routerLink="/" class="nav-link">Home</a></li>
+             
+             
+             
+              <li><a routerLink="/cart" class="nav-link cart"><i class="icon-cart-1"></i><span class="items"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="cart-page-holder">
+  
+      <section style="background-image:url('../assets/img/bg.jpg')">
+        <div class="container" style="color:#bd2130">
+          <h1>Make an order</h1>
+          
+        
+        </div>
+      </section>
+   
+
+	  
+      <section class="cart">
+        <div class="container">
+          <div class="cart-holder">
+            <div class="cart-heading">
+              <div class="row">
+               </div>
+            </div>
+            <div class="cart-body">
+              <div class="row">
+                
+			   <div>
+                  <div class="product-overview clearfix">
+                  
+                    <div class="product-details ">
+					<table class="table">
+					
+					<thead>
+	<th>Item ID</th>
+	<th>Item Name</th>
+	<th>Item price</th>
+	
+	</thead>
+	
+  <tr *ngFor="let product of itemService.items">
+	
+	<td>
+    <img src="../assets/img/logo.png" alt="AppleF Store" style="width:10%"> 
+	{{product.productid}}</td>
+	<td>{{product.name}}</td>
+	<td><h3>{{product.price}}</h3> </td>
+
+	
+	</tr>
+	
+
+		<td>
+		<div>
+	 
+		  <a class= "btn btn-success" pageScroll href="#shipping-address-form" >Order Now</a>
+	  </div>
+	 
+		</td>	</table>
+	 <hr>
+	 
+				</div>                   
+				</div> 
+				   
+                  </div>
+                </div>
+            
+               
+             
+             
+              </div>
+            </div>
+          </div>
+        
+        <div class="shipping container">
+          <div class="form-holder">
+            <form id="shipping-address-form" action="#" method="post">
+              <div class="shipping-main">
+                <h3>Invoice Address</h3>
+                <div class="row">
+                 
+				  <div class="col-sm-12">
+                    <input type="text" name="productname" disabled placeholder=" Selected Item Name: {{selectedItem.name}}" required="" class="form-control">
+                  </div>
+				  <div class="col-sm-12">
+                    <input type="text" name="productprice" disabled placeholder="Selected Item Price: {{selectedItem.price}}" required="" class="form-control">
+                  </div>
+				   <div class="col-sm-6">
+                    <input type="text" name="firstname" placeholder="First Name" required="" class="form-control">
+                  </div> 
+                  <div class="col-sm-6">
+                    <input type="text" name="lastname" placeholder="Last Name" required="" class="form-control">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="email" name="email" placeholder="Email Address" required="" class="form-control">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" name="number" placeholder="Phone Number" required="" class="form-control">
+                  </div>
+                  <div class="col-sm-12">
+                    <input type="text" name="address-1" placeholder="Address" required="" class="form-control">
+                  </div>
+             
+                  <div class="col-sm-6">
+                    <input type="text" name="city" placeholder="City" required="" class="form-control">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" name="postalcode" placeholder="Postal Code" required="" class="form-control">
+                  </div>
+               
+            
+                  <div class="col-sm-12">
+             <button id="shipping-submit" type="submit" class="oder-now btn btn-primary btn-template btn-lg" (click)="success($event, open)">Order Now <i class="icon-shipping-truck"></i></button>       
+                  </div>
+				  <script>
+				  function success(){
+				  alert('Order Placed Successfully');
+						}
+						</script>
+                </div>
+              </div>
+             
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+ 
+ 
+ 
+    <footer>
+      <div class="container">
+        <div class="contact-details text-center">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="icon"><i class="icon-marker"></i></div>
+              <div class="text">
+                <p>Apple Store, California <br>USA</p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="icon"><i class="icon-phone-1"></i></div>
+              <div class="text">
+                <p>+91 9876543212</p>
+               
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="icon"><i class="icon-mail-1"></i></div>
+              <div class="text">
+                <p><a href="mailto:support@applestore.com">Support@applestore.com</a></p>    </div>
+            </div>
+          </div>
+        </div>
+        <div class="social text-center">
+        </div>
+     
+      </div>
+     
+    </footer>
+
+    <div id="scrollTop"><i class="fa fa-angle-up"></i></div>
